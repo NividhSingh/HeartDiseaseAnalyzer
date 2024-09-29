@@ -1,0 +1,25 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Heart Disease Risk Assessment</h1>
+        <div class="alert alert-{{ 'success' if result == 0 else 'danger' }} text-center" role="alert">
+            {% if result == 0 %}
+                You are not at risk of heart disease.
+            {% else %}
+                You are at risk of heart disease.
+            {% endif %}
+        </div>
+        <div class="text-center">
+            <a href="/" class="btn btn-primary">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
