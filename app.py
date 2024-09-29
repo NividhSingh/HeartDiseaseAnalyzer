@@ -5,12 +5,6 @@ from predict_heart_disease import compute_output
 
 app = Flask(__name__)
 
-# Function to process inputs
-def process_inputs(data):
-    # Example processing: sum the numeric values
-    # You can replace this with your actual processing logic
-    return data.sum().to_dict()  # Returning sum of each column as a dictionary
-
 @app.route('/')
 def home():
     return render_template('index.html')
