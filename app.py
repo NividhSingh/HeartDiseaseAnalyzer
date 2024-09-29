@@ -42,6 +42,15 @@ def process():
         'Education': float(request.form.get('Education')),
         'Income': float(request.form.get('Income'))
     }
+    if input_data['Age'] < 25:
+        input_data['Age'] = 1
+    else:
+        input_data['Age'] = int(input_data['Age'] / 5) - 3
+    input_data['Education'] = int(input_data['Education']/3) + 1
+    if input_data['Income'] < 75000:
+        input_data['Income'] = int(input_data['Income']/15000)
+    else:
+        input_data['Income'] = 6
 
     # Create DataFrame from input data
     df = pd.DataFrame([input_data])
